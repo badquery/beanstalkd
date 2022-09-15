@@ -225,6 +225,7 @@ runalltest(Test *ts, int limit)
     int nrun = 0;
     Test *t;
     for (t=ts; t->f; t++) {
+printf("running tst\n");
         if (nrun >= limit) {
             waittest(ts);
             nrun--;
@@ -232,6 +233,7 @@ runalltest(Test *ts, int limit)
         start(t);
         nrun++;
     }
+printf("here\n");
     for (; nrun; nrun--) {
         waittest(ts);
     }
